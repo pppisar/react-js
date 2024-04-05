@@ -4,10 +4,11 @@ import TabsSection from "./components/TabsSection"
 import TeachingSection from "./components/TeachingSection"
 import FeaturesSection from "./components/FeaturesSection"
 import FeedbackSection from "./components/FeedBackSection"
+import EffectSection from "./components/EffectSection"
 import { useState } from "react"
 
 function App() {
-  const [tab, setTab] = useState('feedback')
+  const [tab, setTab] = useState('effect')
 
   return (
     <>
@@ -25,9 +26,11 @@ function App() {
         )}
         
         {tab === 'feedback' && (
-          <>
-            <FeedbackSection />
-          </>
+          <FeedbackSection />
+        )}
+
+        {tab === 'effect' && (
+          <EffectSection />
         )}
       </main>
     </>
