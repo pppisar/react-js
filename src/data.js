@@ -18,7 +18,7 @@ export const ways = [
     title: 'Our teachers are leading experts',
     description:
       'Instagram, Google, Monobank, Avast are active developers with experience teaching to large audiences.',
-  },
+  }
 ]
 
 export const differences = {

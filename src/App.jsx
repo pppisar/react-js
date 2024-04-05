@@ -36,19 +36,22 @@ function App() {
         <section>
           <h3>Our approach</h3>
           <ul>
-            <ApproachDesc {...ways[0]} />
+            {/* <ApproachDesc {...ways[0]} />
             <ApproachDesc {...ways[1]} />
             <ApproachDesc {...ways[2]} />
-            <ApproachDesc {...ways[3]} />
+            <ApproachDesc {...ways[3]} /> */}
+
+            {ways.map(way => <ApproachDesc key={way.title} {...way} />)}
+
           </ul>
         </section>
 
         <section>
           <h3>Our features</h3>
 
-          <Button onClick={() => handleClick('way')}>Approach</Button>
-          <Button onClick={() => handleClick('easy')}>Usability</Button>
-          <Button onClick={() => handleClick('program')}>Quality</Button>
+          <Button isActive={contentType === 'way'} onClick={() => handleClick('way')}>Approach</Button>
+          <Button isActive={contentType === 'easy'} onClick={() => handleClick('easy')}>Usability</Button>
+          <Button isActive={contentType === 'program'} onClick={() => handleClick('program')}>Quality</Button>
 
           {/* { contentType ? <p>{ differences[contentType] }</p> : <p>Type on button</p> } */}
 
@@ -58,7 +61,7 @@ function App() {
           { !contentType && <p>Type on button</p> }
           { contentType && <p>{ differences[contentType] }</p> }
 
-          { tabContent }
+          {/* { tabContent } */}
         </section>
       </main>
     </div>
